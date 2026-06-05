@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS Variasi</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* HEADER */
+header{
+    background:#000000;
+    color:white;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.top-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-area img{
+    width:60px;
+    height:60px;
+}
+
+.logo-text{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.search-box{
+    width:45%;
+}
+
+.search-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+}
+
+.cart{
+    background:white;
+    color:#ff0000;
+    padding:10px 15px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+/* NAV */
+nav{
+    background:#ff0000;
+    padding:12px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+/* BANNER */
+.banner{
+    width:90%;
+    margin:20px auto;
+    background:linear-gradient(135deg,#ff0000,#1900ff);
+    color:white;
+    padding:50px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.banner h1{
+    font-size:40px;
+}
+
+.banner p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* SECTION */
+section{
+    width:90%;
+    margin:auto;
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#ff0000;
+}
+
+/* PRODUK */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+article{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+article:hover{
+    transform:translateY(-5px);
+}
+
+article img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:15px;
+}
+
+.price{
+    color:#ff0000;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#ff0000;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff0000;
+}
+
+/* CHECKOUT */
+.checkout-box{
+    width:90%;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.checkout-btn{
+    background:rgb(255, 0, 0);
+    margin-top:15px;
+}
+
+footer{
+    margin-top:40px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="top-header">
+
+        <div class="logo-area">
+            <img src="C:\Users\Lenovo\Pictures\20250710_175140-picsay.jpg" alt="Logo">
+            <div class="logo-text">RS Variasi</div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Cari produk favoritmu...">
+        </div>
+
+        <div class="cart">
+            🛒 Keranjang: <span id="jumlah">0</span>
+        </div>
+
+    </div>
+</header>
+
+<nav>
+    <a href="#">Beranda</a>
+    <a href="#">Aksesoris</a>
+    <a href="#">Promo</a>
+    <a href="#">Kontak</a>
+</nav>
+
+<section class="banner">
+    <h1>🔥 Mega Sale 6.6 🔥</h1>
+    <p>Diskon hingga 50% untuk semua produk pilihan</p>
+</section>
+
+<section>
+    <h2>Produk Terlaris</h2>
+
+    <div class="product-grid">
+
+        <article>
+            <img src="C:\Users\Lenovo\Pictures\20260606_001300.jpg.jpeg">
+            <div class="product-info">
+                <h3>Paket acc big bus strobo wave & Running text p5 24v</h3>
+                <div class="price">Rp 3.500.000</div>
+                <button onclick="tambahKeranjang('Paket acc big bus strobo wave & Running text p5 24v',3500000)">
+                    Tambah ke Keranjang
+                </button>
+            </div>
+        </article>
+
+        <article>
+            <img src="C:\Users\Lenovo\Pictures\20260606_001643.jpg.jpeg">
+            <div class="product-info">
+                <h3>Strobo wave kolaborasi 5 tumpuk baling baling 200cm 24v</h3>
+                <div class="price">Rp 1.750.000</div>
+                <button onclick="tambahKeranjang('Strobo wave kolaborasi 5 tumpuk baling baling 200cm 24v',1750000)">
+                    Tambah ke Keranjang
+                </button>
+            </div>
+        </article>
+
+        <article>
+            <img src="C:\Users\Lenovo\Pictures\20260606_001840.jpg.jpeg">
+            <div class="product-info">
+                <h3>Paket acc big bus strobo 3 tumpuk & running text p5 24v</h3>
+                <div class="price">Rp 2.800.000</div>
+                <button onclick="tambahKeranjang('Paket acc big bus strobo 3 tumpuk & running text p5 24v',2800000)">
+                    Tambah ke Keranjang
+                </button>
+            </div>
+        </article>
+
+        <article>
+            <img src="C:\Users\Lenovo\Pictures\20260606_002018.jpg.jpeg">
+            <div class="product-info">
+                <h3>Running text p5 slim rgb 12v/24v mobil, elf, truk, bus (Termurah)</h3>
+                <div class="price">Rp 1.500.000</div>
+                <button onclick="tambahKeranjang('Running text p5 slim rgb 12v/24v mobil, elf, truk, bus (Termurah)',1500000)">
+                    Tambah ke Keranjang
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="checkout-box">
+    <h2>Keranjang Belanja</h2>
+
+    <ul id="daftarBelanja"></ul>
+
+    <h3>Total: Rp <span id="total">0</span></h3>
+
+    <button class="checkout-btn" onclick="checkout()">
+        Checkout Sekarang
+    </button>
+</section>
+
+<footer>
+    <p>© 2026 RS Variasi - Tugas Praktikum HTML5</p>
+</footer>
+
+<script>
+let jumlah = 0;
+let total = 0;
+
+function tambahKeranjang(nama, harga){
+
+    jumlah++;
+    total += harga;
+
+    document.getElementById("jumlah").innerHTML = jumlah;
+    document.getElementById("total").innerHTML =
+        total.toLocaleString("id-ID");
+
+    let item = document.createElement("li");
+    item.innerHTML =
+        nama + " - Rp " + harga.toLocaleString("id-ID");
+
+    document.getElementById("daftarBelanja")
+        .appendChild(item);
+}
+
+function checkout(){
+
+    if(total == 0){
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+    alert(
+        "Checkout Berhasil!\n\nTotal Pembayaran: Rp "
+        + total.toLocaleString("id-ID") +
+        "\n\nTerima kasih telah berbelanja di RS Variasi."
+    );
+}
+</script>
+
+</body>
+</html>
