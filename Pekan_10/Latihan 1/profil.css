@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.container{
+    width: 100%;
+    max-width: 900px;
+}
+
+.profile-card{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.header{
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 15px;
+}
+
+.header h1{
+    margin-bottom: 10px;
+}
+
+.content{
+    padding: 30px;
+}
+
+.content h2{
+    color: #0072ff;
+    margin-bottom: 15px;
+    border-left: 5px solid #0072ff;
+    padding-left: 10px;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.box{
+    background: #f4f6f9;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.box h3{
+    color: #0072ff;
+    margin-bottom: 5px;
+}
+
+.about{
+    background: #f4f6f9;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.skills{
+    margin-bottom: 30px;
+}
+
+.skills span{
+    display: inline-block;
+    background: #0072ff;
+    color: white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+button{
+    background: #0072ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #0056cc;
+}
+
+@media(max-width:768px){
+    .info{
+        grid-template-columns: 1fr;
+    }
+
+    .header img{
+        width: 130px;
+        height: 130px;
+    }
+}
