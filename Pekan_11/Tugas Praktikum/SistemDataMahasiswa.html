@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Data Mahasiswa</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    width:500px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.button-group{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+button{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+    font-size:16px;
+}
+
+#simpan{
+    background:#28a745;
+}
+
+#tampilkan{
+    background:#007bff;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+#hasil{
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+table, th, td{
+    border:1px solid #ddd;
+}
+
+th{
+    background:#007bff;
+    color:white;
+}
+
+th, td{
+    padding:10px;
+    text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 Sistem Data Mahasiswa</h1>
+
+    <input type="text" id="nama" placeholder="Masukkan Nama Mahasiswa">
+
+    <input type="number" id="nilai" placeholder="Masukkan Nilai">
+
+    <div class="button-group">
+        <button id="simpan">Simpan</button>
+        <button id="tampilkan">Tampilkan</button>
+    </div>
+
+    <div id="hasil"></div>
+</div>
+
+<script>
+
+// Array untuk menyimpan data mahasiswa
+let dataMahasiswa = [];
+
+// Fungsi Simpan Data
+function simpanData() {
+
+    let nama = document.getElementById("nama").value;
+    let nilai = document.getElementById("nilai").value;
+
+    if(nama === "" || nilai === ""){
+        alert("Nama dan Nilai harus diisi!");
+        return;
+    }
+
+    dataMahasiswa.push({
+        nama: nama,
+        nilai: nilai
+    });
+
+    alert("Data berhasil disimpan!");
+
+    document.getElementById("nama").value = "";
+    document.getElementById("nilai").value = "";
+}
+
+// Fungsi Tampilkan Data
+function tampilkanData() {
+
+    let output = `
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+            </tr>
+    `;
+
+    for(let i = 0; i < dataMahasiswa.length; i++){
+        output += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${dataMahasiswa[i].nama}</td>
+                <td>${dataMahasiswa[i].nilai}</td>
+            </tr>
+        `;
+    }
+
+    output += "</table>";
+
+    document.getElementById("hasil").innerHTML = output;
+}
+
+// Event
+document.getElementById("simpan").addEventListener("click", simpanData);
+
+document.getElementById("tampilkan").addEventListener("click", tampilkanData);
+
+</script>
+
+</body>
+</html>

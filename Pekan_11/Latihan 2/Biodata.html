@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menampilkan Biodata</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 20px rgba(0,0,0,0.2);
+            text-align:center;
+            width:400px;
+        }
+
+        h1{
+            color:#333;
+            margin-bottom:20px;
+        }
+
+        button{
+            background:#007bff;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#0056b3;
+            transform:scale(1.05);
+        }
+
+        #biodata{
+            margin-top:20px;
+            padding:15px;
+            border-radius:10px;
+            background:#f4f4f4;
+            text-align:left;
+            display:none;
+        }
+
+        #biodata p{
+            margin:8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Biodata Mahasiswa</h1>
+
+        <button onclick="tampilkanBiodata()">
+            Tampilkan Biodata
+        </button>
+
+        <div id="biodata">
+            <p><strong>Nama:</strong> Muhammad Fiasya Alfath Suyanto</p>
+            <p><strong>NPM:</strong> 2025806017</p>
+            <p><strong>Jurusan:</strong> Teknologi Informasi</p>
+            <p><strong>Fakultas:</strong> Ilmu Komputer</p>
+            <p><strong>Email:</strong> rasyasuyanto12@gmail.com</p>
+        </div>
+    </div>
+
+    <script>
+        function tampilkanBiodata() {
+            document.getElementById("biodata").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

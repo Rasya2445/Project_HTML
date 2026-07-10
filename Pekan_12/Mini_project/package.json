@@ -1,0 +1,11 @@
+{
+  "name": "server-informasi-kampus",
+  "version": "1.0.0",
+  "description": "Mini Project Node.js Server Informasi Kampus",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Muhammad Firasya Alfath Suyanto",
+  "license": "ISC"
+}
